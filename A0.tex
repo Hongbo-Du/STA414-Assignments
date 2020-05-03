@@ -1,0 +1,494 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper,text={16.5cm,25.2cm},centering]{geometry}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2ex}
+
+\hypersetup
+       {   pdfauthor = { Hongbo Du(1003568089) },
+           pdftitle={ Assignment 0 },
+           colorlinks=TRUE,
+           linkcolor=black,
+           citecolor=blue,
+           urlcolor=blue
+       }
+
+\title{ Assignment 0 }
+
+\author{ Hongbo Du(1003568089) }
+
+
+\usepackage{upquote}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    upquote=true,
+    breaklines=true,
+    breakindent=0pt,
+    keepspaces=true,
+    showspaces=false,
+    columns=fullflexible,
+    showtabs=false,
+    showstringspaces=false,
+    escapeinside={(*@}{@*)},
+    extendedchars=true,
+}
+\newcommand{\HLJLt}[1]{#1}
+\newcommand{\HLJLw}[1]{#1}
+\newcommand{\HLJLe}[1]{#1}
+\newcommand{\HLJLeB}[1]{#1}
+\newcommand{\HLJLo}[1]{#1}
+\newcommand{\HLJLk}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkc}[1]{\textcolor[RGB]{59,151,46}{\textit{#1}}}
+\newcommand{\HLJLkd}[1]{\textcolor[RGB]{214,102,97}{\textit{#1}}}
+\newcommand{\HLJLkn}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkp}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkr}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLkt}[1]{\textcolor[RGB]{148,91,176}{\textbf{#1}}}
+\newcommand{\HLJLn}[1]{#1}
+\newcommand{\HLJLna}[1]{#1}
+\newcommand{\HLJLnb}[1]{#1}
+\newcommand{\HLJLnbp}[1]{#1}
+\newcommand{\HLJLnc}[1]{#1}
+\newcommand{\HLJLncB}[1]{#1}
+\newcommand{\HLJLnd}[1]{\textcolor[RGB]{214,102,97}{#1}}
+\newcommand{\HLJLne}[1]{#1}
+\newcommand{\HLJLneB}[1]{#1}
+\newcommand{\HLJLnf}[1]{\textcolor[RGB]{66,102,213}{#1}}
+\newcommand{\HLJLnfm}[1]{\textcolor[RGB]{66,102,213}{#1}}
+\newcommand{\HLJLnp}[1]{#1}
+\newcommand{\HLJLnl}[1]{#1}
+\newcommand{\HLJLnn}[1]{#1}
+\newcommand{\HLJLno}[1]{#1}
+\newcommand{\HLJLnt}[1]{#1}
+\newcommand{\HLJLnv}[1]{#1}
+\newcommand{\HLJLnvc}[1]{#1}
+\newcommand{\HLJLnvg}[1]{#1}
+\newcommand{\HLJLnvi}[1]{#1}
+\newcommand{\HLJLnvm}[1]{#1}
+\newcommand{\HLJLl}[1]{#1}
+\newcommand{\HLJLld}[1]{\textcolor[RGB]{148,91,176}{\textit{#1}}}
+\newcommand{\HLJLs}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsa}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsb}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsc}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsd}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsdB}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsdC}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLse}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLsh}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsi}[1]{#1}
+\newcommand{\HLJLso}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLsr}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLss}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLssB}[1]{\textcolor[RGB]{201,61,57}{#1}}
+\newcommand{\HLJLnB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnbB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnfB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnh}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLni}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnil}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLnoB}[1]{\textcolor[RGB]{59,151,46}{#1}}
+\newcommand{\HLJLoB}[1]{\textcolor[RGB]{102,102,102}{\textbf{#1}}}
+\newcommand{\HLJLow}[1]{\textcolor[RGB]{102,102,102}{\textbf{#1}}}
+\newcommand{\HLJLp}[1]{#1}
+\newcommand{\HLJLc}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLch}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcm}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcp}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcpB}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcs}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLcsB}[1]{\textcolor[RGB]{153,153,119}{\textit{#1}}}
+\newcommand{\HLJLg}[1]{#1}
+\newcommand{\HLJLgd}[1]{#1}
+\newcommand{\HLJLge}[1]{#1}
+\newcommand{\HLJLgeB}[1]{#1}
+\newcommand{\HLJLgh}[1]{#1}
+\newcommand{\HLJLgi}[1]{#1}
+\newcommand{\HLJLgo}[1]{#1}
+\newcommand{\HLJLgp}[1]{#1}
+\newcommand{\HLJLgs}[1]{#1}
+\newcommand{\HLJLgsB}[1]{#1}
+\newcommand{\HLJLgt}[1]{#1}
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{We}@*) (*@\HLJLcs{will}@*) (*@\HLJLcs{use}@*) (*@\HLJLcs{unit}@*) (*@\HLJLcs{testing}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{make}@*) (*@\HLJLcs{sure}@*) (*@\HLJLcs{our}@*) (*@\HLJLcs{solutions}@*) (*@\HLJLcs{are}@*) (*@\HLJLcs{what}@*) (*@\HLJLcs{we}@*) (*@\HLJLcs{expect}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{This}@*) (*@\HLJLcs{shows}@*) (*@\HLJLcs{how}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{import}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{Test}@*) (*@\HLJLcs{package,}@*) (*@\HLJLcs{which}@*) (*@\HLJLcs{provides}@*) (*@\HLJLcs{convenient}@*) (*@\HLJLcs{functions}@*) (*@\HLJLcs{like}@*) (*@\HLJLcs{@test}@*)
+(*@\HLJLk{using}@*) (*@\HLJLn{Test}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Setting}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{Random}@*) (*@\HLJLcs{Seed}@*) (*@\HLJLcs{is}@*) (*@\HLJLcs{good}@*) (*@\HLJLcs{practice}@*) (*@\HLJLcs{so}@*) (*@\HLJLcs{our}@*) (*@\HLJLcs{code}@*) (*@\HLJLcs{is}@*) (*@\HLJLcs{consistent}@*) (*@\HLJLcs{between}@*) (*@\HLJLcs{runs}@*)
+(*@\HLJLk{using}@*) (*@\HLJLn{Random}@*) (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Import}@*) (*@\HLJLcs{Random}@*) (*@\HLJLcs{Package}@*)
+(*@\HLJLn{Random}@*)(*@\HLJLoB{.}@*)(*@\HLJLnf{seed!}@*)(*@\HLJLp{(}@*)(*@\HLJLni{414}@*)(*@\HLJLp{);}@*) (*@\HLJLcs{{\#}Set}@*) (*@\HLJLcs{Random}@*) (*@\HLJLcs{Seed}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{;}@*) (*@\HLJLcs{suppresses}@*) (*@\HLJLcs{output,}@*) (*@\HLJLcs{makes}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{writeup}@*) (*@\HLJLcs{slightly}@*) (*@\HLJLcs{cleaner.}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{!}@*) (*@\HLJLcs{is}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{julia}@*) (*@\HLJLcs{convention}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{indicate}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{function}@*) (*@\HLJLcs{mutates}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{global}@*) (*@\HLJLcs{state.}@*)
+\end{lstlisting}
+
+
+\section{Probability}
+\subsection{Variance and Covariance}
+Let $X$ and $Y$ be two continuous, independent random variables.
+
+\begin{itemize}
+\item[1. ] [3pts] Starting from the definition of independence, show that the independence of $X$ and $Y$ implies that their covariance is $0$.
+
+\end{itemize}
+Answer:
+
+\begin{itemize}
+\item[2. ] [3pts] For a scalar constant $a$, show the following two properties starting from the definition of expectation:
+
+\end{itemize}
+
+\begin{align}
+\mathbb{E}(X+aY) &= \mathbb{E}(X) + a\mathbb{E}(Y)\\
+\text{var}(X + aY) &= \text{var}(X) + a^2 \text{var}(Y)
+\end{align}
+Answer:
+
+\subsection{1D Gaussian Densities}
+\begin{itemize}
+\item[1. ] [1pts] Can a probability density function (pdf) ever take values greater than $1$?
+
+\end{itemize}
+Answer: Yes, as long as the input value is finite non-negative.
+
+\begin{itemize}
+\item[2. ] Let $X$ be a univariate random variable distributed according to a Gaussian distribution with mean $\mu$ and variance $\sigma^2$.
+
+\end{itemize}
+\begin{itemize}
+\item [[1pts]] Write the expression for the pdf:
+
+Answer:
+
+
+\item [[2pts]] Write the code for the function that computes the pdf at $x$ with default values $\mu=0$ and $\sigma = \sqrt{0.01}$:
+
+Answer:
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{gaussian{\_}pdf}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{;}@*) (*@\HLJLn{mean}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{0.}@*)(*@\HLJLp{,}@*) (*@\HLJLn{variance}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{0.01}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLn{sd}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{sqrt}@*)(*@\HLJLp{(}@*)(*@\HLJLn{variance}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLn{pdf}@*) (*@\HLJLoB{=}@*) (*@\HLJLp{(}@*)(*@\HLJLni{1}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{/}@*)(*@\HLJLp{(}@*)(*@\HLJLn{sd}@*) (*@\HLJLoB{*}@*) (*@\HLJLnf{sqrt}@*)(*@\HLJLp{(}@*)(*@\HLJLni{2}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{pi}@*)(*@\HLJLp{))}@*) (*@\HLJLoB{*}@*) (*@\HLJLnf{exp}@*)(*@\HLJLp{(}@*)(*@\HLJLoB{-}@*)(*@\HLJLnfB{0.5}@*) (*@\HLJLoB{*}@*) (*@\HLJLp{((}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{-}@*) (*@\HLJLn{mean}@*)(*@\HLJLp{)}@*)(*@\HLJLoB{/}@*)(*@\HLJLp{(}@*)(*@\HLJLn{sd}@*)(*@\HLJLp{))}@*)(*@\HLJLoB{{\textasciicircum}}@*)(*@\HLJLni{2}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLk{return}@*) (*@\HLJLn{pdf}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+gaussian_pdf (generic function with 1 method)
+\end{lstlisting}
+
+
+Test your implementation against a standard implementation from a library:
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Test}@*) (*@\HLJLcs{answers}@*)
+(*@\HLJLk{using}@*) (*@\HLJLn{Distributions}@*)(*@\HLJLoB{:}@*) (*@\HLJLn{pdf}@*)(*@\HLJLp{,}@*) (*@\HLJLn{Normal}@*) (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Note}@*) (*@\HLJLcs{Normal}@*) (*@\HLJLcs{uses}@*) (*@\HLJLcs{N(mean,}@*) (*@\HLJLcs{stddev)}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{parameters}@*)
+(*@\HLJLnd{@testset}@*) (*@\HLJLs{"{}Implementation}@*) (*@\HLJLs{of}@*) (*@\HLJLs{Gaussian}@*) (*@\HLJLs{pdf"{}}@*) (*@\HLJLk{begin}@*)
+  (*@\HLJLn{x}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{randn}@*)(*@\HLJLp{()}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{gaussian{\_}pdf}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{\ensuremath{\approx}}@*) (*@\HLJLn{pdf}@*)(*@\HLJLoB{.}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{Normal}@*)(*@\HLJLp{(}@*)(*@\HLJLnfB{0.}@*)(*@\HLJLp{,}@*)(*@\HLJLnf{sqrt}@*)(*@\HLJLp{(}@*)(*@\HLJLnfB{0.01}@*)(*@\HLJLp{)),}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{\ensuremath{\approx}}@*) (*@\HLJLcs{is}@*) (*@\HLJLcs{syntax}@*) (*@\HLJLcs{sugar}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{isapprox,}@*) (*@\HLJLcs{typed}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{{\textasciigrave}{\textbackslash}approx}@*) (*@\HLJLcs{<TAB>{\textasciigrave}}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{or}@*) (*@\HLJLcs{use}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{full}@*) (*@\HLJLcs{function,}@*) (*@\HLJLcs{like}@*) (*@\HLJLcs{below}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{gaussian{\_}pdf}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{,}@*)(*@\HLJLn{mean}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{10.}@*)(*@\HLJLp{,}@*) (*@\HLJLn{variance}@*)(*@\HLJLoB{=}@*)(*@\HLJLni{1}@*)(*@\HLJLp{)}@*) (*@\HLJLp{,}@*) (*@\HLJLn{pdf}@*)(*@\HLJLoB{.}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{Normal}@*)(*@\HLJLp{(}@*)(*@\HLJLnfB{10.}@*)(*@\HLJLp{,}@*) (*@\HLJLnf{sqrt}@*)(*@\HLJLp{(}@*)(*@\HLJLni{1}@*)(*@\HLJLp{)),}@*)(*@\HLJLn{x}@*)(*@\HLJLp{))}@*)
+(*@\HLJLk{end}@*)(*@\HLJLp{;}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+Test Summary:                  | Pass  Total
+Implementation of Gaussian pdf |    2      2
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[3. ] [1pts] What is the value of the pdf at $x=0$? What is probability that $x=0$ (hint: is this the same as the pdf? Briefly explain your answer.)
+
+Answer: The value of the pdf at $x=0$ is a finite non-negtive number, and the probability of $x=0$ is 0. These two are not the same.
+
+
+\item[4. ] A Gaussian with mean $\mu$ and variance $\sigma^2$ can be written as a simple transformation of the standard Gaussian with mean $0.$ and variance $1.$.
+
+\end{itemize}
+\begin{itemize}
+\item [[1pts]] Write the transformation that takes $x \sim \mathcal{N}(0.,1.)$ to $z \sim \mathcal{N}(\mu, \sigma^2)$:
+
+Answer: Consider the transformation $x = \frac{z - \mu}{\sigma}$ which takes $z$ to $x$. Thus, the transformation $z = x\sigma + \mu$ takes $x$ to $z$.
+
+
+\item [[2pts]] Write a code implementation to produce $n$ independent samples from $\mathcal{N}(\mu, \sigma^2)$ by transforming $n$ samples from $\mathcal{N}(0.,1.)$.
+
+\end{itemize}
+Answer
+
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{sample{\_}gaussian}@*)(*@\HLJLp{(}@*)(*@\HLJLn{n}@*)(*@\HLJLp{;}@*) (*@\HLJLn{meam}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{0.}@*)(*@\HLJLp{,}@*) (*@\HLJLn{variance}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{0.01}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{n}@*) (*@\HLJLcs{samples}@*) (*@\HLJLcs{from}@*) (*@\HLJLcs{standard}@*) (*@\HLJLcs{gaussian}@*)
+  (*@\HLJLn{x}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{Normal}@*)(*@\HLJLp{(}@*)(*@\HLJLni{0}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{n}@*)(*@\HLJLp{)}@*)
+
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{transform}@*) (*@\HLJLcs{x}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{sample}@*) (*@\HLJLcs{z}@*) (*@\HLJLcs{from}@*) (*@\HLJLcs{N(mean,variance)}@*)
+  (*@\HLJLn{mu}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{zeros}@*)(*@\HLJLp{(}@*)(*@\HLJLkc{true}@*)(*@\HLJLp{,}@*) (*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)))}@*)
+  (*@\HLJLn{z}@*) (*@\HLJLoB{=}@*) (*@\HLJLn{x}@*) (*@\HLJLoB{*}@*) (*@\HLJLnf{sqrt}@*)(*@\HLJLp{(}@*)(*@\HLJLn{variance}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{+}@*) (*@\HLJLn{mu}@*)
+  (*@\HLJLk{return}@*) (*@\HLJLn{z}@*)
+(*@\HLJLk{end}@*)(*@\HLJLp{;}@*)
+\end{lstlisting}
+
+
+[2pts] Test your implementation by computing statistics on the samples:
+
+
+\begin{lstlisting}
+(*@\HLJLk{using}@*) (*@\HLJLn{Statistics}@*)(*@\HLJLoB{:}@*) (*@\HLJLn{mean}@*)(*@\HLJLp{,}@*) (*@\HLJLn{var}@*)
+(*@\HLJLnd{@testset}@*) (*@\HLJLs{"{}Numerically}@*) (*@\HLJLs{testing}@*) (*@\HLJLs{Gaussian}@*) (*@\HLJLs{Sample}@*) (*@\HLJLs{Statistics"{}}@*) (*@\HLJLk{begin}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Sample}@*) (*@\HLJLcs{100000}@*) (*@\HLJLcs{samples}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{your}@*) (*@\HLJLcs{function}@*) (*@\HLJLcs{and}@*) (*@\HLJLcs{use}@*) (*@\HLJLcs{mean}@*) (*@\HLJLcs{and}@*) (*@\HLJLcs{var}@*) (*@\HLJLcs{to}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{compute}@*) (*@\HLJLcs{statistics.}@*)
+  (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{tests}@*) (*@\HLJLcs{should}@*) (*@\HLJLcs{compare}@*) (*@\HLJLcs{statistics}@*) (*@\HLJLcs{against}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{true}@*) (*@\HLJLcs{mean}@*) (*@\HLJLcs{and}@*) (*@\HLJLcs{variance}@*) (*@\HLJLcs{from}@*) (*@\HLJLcs{arguments.}@*)
+  (*@\HLJLn{sample}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{sample{\_}gaussian}@*)(*@\HLJLp{(}@*)(*@\HLJLni{100000}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLn{s{\_}mean}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{mean}@*)(*@\HLJLp{(}@*)(*@\HLJLn{sample}@*)(*@\HLJLp{)}@*) (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{true}@*) (*@\HLJLcs{mean}@*)
+  (*@\HLJLn{s{\_}var}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{var}@*)(*@\HLJLp{(}@*)(*@\HLJLn{sample}@*)(*@\HLJLp{)}@*) (*@\HLJLcs{{\#}}@*) (*@\HLJLcs{true}@*) (*@\HLJLcs{variance}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLn{s{\_}mean}@*)(*@\HLJLp{,}@*) (*@\HLJLni{0}@*)(*@\HLJLp{,}@*) (*@\HLJLn{atol}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{1e-2}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLn{s{\_}var}@*)(*@\HLJLp{,}@*) (*@\HLJLnfB{0.01}@*)(*@\HLJLp{,}@*) (*@\HLJLn{atol}@*)(*@\HLJLoB{=}@*)(*@\HLJLnfB{1e-2}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)(*@\HLJLp{;}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+Test Summary:                                  | Pass  Total
+Numerically testing Gaussian Sample Statistics |    2      2
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[5. ] [3pts] Sample $10000$ samples from a Gaussian with mean $10.$ an variance $2$. Plot the \textbf{normalized} \texttt{histogram} of these samples. On the same axes \texttt{plot!} the pdf of this distribution.
+
+\end{itemize}
+Confirm that the histogram approximates the pdf.
+
+
+\begin{lstlisting}
+(*@\HLJLk{using}@*) (*@\HLJLn{Plots}@*)
+
+(*@\HLJLn{hist}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{histogram}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{Normal}@*)(*@\HLJLp{(}@*)(*@\HLJLni{10}@*)(*@\HLJLp{,}@*) (*@\HLJLni{2}@*)(*@\HLJLp{),}@*) (*@\HLJLni{10000}@*)(*@\HLJLp{))}@*)
+(*@\HLJLnf{plot!}@*)(*@\HLJLp{(}@*)(*@\HLJLn{hist}@*)(*@\HLJLp{)}@*)
+\end{lstlisting}
+
+\includegraphics[width=\linewidth]{/Users/Sean/Desktop/sta414h1/assignment_0/jl_ZQ2br0/A0_6_1.pdf}
+
+\section{Calculus}
+\subsection{Manual Differentiation}
+Let $x,y \in \mathbb{R}^m$, $A \in \mathbb{R}^{m \times n}$, and square matrix $B \in \mathbb{R}^{m \times m}$. And where $x'$ is the transpose of $x$. Answer the following questions in vector notation.
+
+\begin{itemize}
+\item[1. ] [1pts] What is the gradient of $x'y$ with respect to $x$?
+
+\end{itemize}
+Answer:
+
+\begin{itemize}
+\item[2. ] [1pts] What is the gradient of $x'x$ with respect to $x$?
+
+\end{itemize}
+Answer:
+
+\begin{itemize}
+\item[3. ] [2pts] What is the Jacobian of $x'A$ with respect to $x$?
+
+\end{itemize}
+Answer:
+
+\begin{itemize}
+\item[4. ] [2pts] What is the gradient of $x'Bx$ with respect to $x$?
+
+\end{itemize}
+Answer:
+
+\subsection{Automatic Differentiation (AD)}
+Use one of the accepted AD library (Zygote.jl (julia), JAX (python), PyTorch (python)) to implement and test your answers above.
+
+\subsubsection{[1pts] Create Toy Data}
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Choose}@*) (*@\HLJLcs{dimensions}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{toy}@*) (*@\HLJLcs{data}@*)
+(*@\HLJLn{m}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{3}@*)
+(*@\HLJLn{n}@*) (*@\HLJLoB{=}@*) (*@\HLJLni{2}@*)
+
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Make}@*) (*@\HLJLcs{random}@*) (*@\HLJLcs{toy}@*) (*@\HLJLcs{data}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{correct}@*) (*@\HLJLcs{dimensions}@*)
+(*@\HLJLn{x}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLn{Int}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+(*@\HLJLn{y}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLn{Int}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+(*@\HLJLn{A}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLn{Int}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{,}@*) (*@\HLJLn{n}@*)(*@\HLJLp{)}@*)
+(*@\HLJLn{B}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{rand}@*)(*@\HLJLp{(}@*)(*@\HLJLn{Int}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+3(*@\ensuremath{\times}@*)3 Array{Int64,2}:
+  2082611162394249223  -1584805259920528499   3312359338613220565
+ -1719917214949896604  -7684552650385197880  -6714780201888608491
+  6844828970218836293    -19336610032898351   4478452655413003417
+\end{lstlisting}
+
+
+[1pts] Test to confirm that the sizes of your data is what you expect:
+
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Make}@*) (*@\HLJLcs{sure}@*) (*@\HLJLcs{your}@*) (*@\HLJLcs{toy}@*) (*@\HLJLcs{data}@*) (*@\HLJLcs{is}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{size}@*) (*@\HLJLcs{you}@*) (*@\HLJLcs{expect!}@*)
+(*@\HLJLnd{@testset}@*) (*@\HLJLs{"{}Sizes}@*) (*@\HLJLs{of}@*) (*@\HLJLs{Toy}@*) (*@\HLJLs{Data"{}}@*) (*@\HLJLk{begin}@*)
+  (*@\HLJLcs{{\#}TODO:}@*) (*@\HLJLcs{confirm}@*) (*@\HLJLcs{sizes}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{toy}@*) (*@\HLJLcs{data}@*) (*@\HLJLcs{x,y,A,B}@*)
+  (*@\HLJLcs{{\#}hint:}@*) (*@\HLJLcs{use}@*) (*@\HLJLcs{{\textasciigrave}size{\textasciigrave}}@*) (*@\HLJLcs{function,}@*) (*@\HLJLcs{which}@*) (*@\HLJLcs{returns}@*) (*@\HLJLcs{tuple}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{integers.}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{y}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{A}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{A}@*)(*@\HLJLp{,}@*) (*@\HLJLni{2}@*)(*@\HLJLp{),}@*) (*@\HLJLn{n}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{B}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLnf{isapprox}@*)(*@\HLJLp{(}@*)(*@\HLJLnf{size}@*)(*@\HLJLp{(}@*)(*@\HLJLn{B}@*)(*@\HLJLp{,}@*) (*@\HLJLni{1}@*)(*@\HLJLp{),}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+(*@\HLJLk{end}@*)(*@\HLJLp{;}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+Test Summary:     | Pass  Total
+Sizes of Toy Data |    6      6
+\end{lstlisting}
+
+
+\subsubsection{Automatic Differentiation}
+\begin{itemize}
+\item[1. ] [1pts] Compute the gradient of $f_1(x) = x'y$ with respect to $x$?
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Use}@*) (*@\HLJLcs{AD}@*) (*@\HLJLcs{Tool}@*)
+(*@\HLJLk{using}@*) (*@\HLJLn{Zygote}@*)(*@\HLJLoB{:}@*) (*@\HLJLn{gradient}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{note:}@*) (*@\HLJLcs{{\textasciigrave}Zygote.gradient{\textasciigrave}}@*) (*@\HLJLcs{returns}@*) (*@\HLJLcs{a}@*) (*@\HLJLcs{tuple}@*) (*@\HLJLcs{of}@*) (*@\HLJLcs{gradients,}@*) (*@\HLJLcs{one}@*) (*@\HLJLcs{for}@*) (*@\HLJLcs{each}@*) (*@\HLJLcs{argument.}@*)
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{if}@*) (*@\HLJLcs{you}@*) (*@\HLJLcs{want}@*) (*@\HLJLcs{just}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{first}@*) (*@\HLJLcs{element}@*) (*@\HLJLcs{you}@*) (*@\HLJLcs{will}@*) (*@\HLJLcs{need}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{index}@*) (*@\HLJLcs{into}@*) (*@\HLJLcs{the}@*) (*@\HLJLcs{tuple}@*) (*@\HLJLcs{with}@*) (*@\HLJLcs{[1]}@*)
+
+(*@\HLJLnf{f1}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{y}@*)
+(*@\HLJLn{df1dx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{gradient}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{f1}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{),}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)[}@*)(*@\HLJLni{1}@*)(*@\HLJLp{]}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+3-element Array{Int64,1}:
+  6835238219692564448
+  -381083529860314721
+ -7858831951335573680
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[2. ] [1pts] Compute the gradient of $f_2(x) = x'x$ with respect to $x$?
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLnf{f2}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{x}@*)
+(*@\HLJLn{df2dx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{gradient}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{f2}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{),}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)[}@*)(*@\HLJLni{1}@*)(*@\HLJLp{]}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+3-element Array{Int64,1}:
+ -8270442776141894610
+  -605331187883253270
+ -1523442933334844300
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[3. ] [1pts] Compute the Jacobian of $f_3(x) = x'A$ with respect to $x$?
+
+\end{itemize}
+If you try the usual \texttt{gradient} fucntion to compute the whole Jacobian it would give an error. You can use the following code to compute the Jacobian instead.
+
+
+\begin{lstlisting}
+(*@\HLJLk{function}@*) (*@\HLJLnf{jacobian}@*)(*@\HLJLp{(}@*)(*@\HLJLn{f}@*)(*@\HLJLp{,}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{y}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{f}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{n}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{y}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{m}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{length}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{T}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{eltype}@*)(*@\HLJLp{(}@*)(*@\HLJLn{y}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLn{j}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{Array}@*)(*@\HLJLp{{\{}}@*)(*@\HLJLn{T}@*)(*@\HLJLp{,}@*) (*@\HLJLni{2}@*)(*@\HLJLp{{\}}(}@*)(*@\HLJLn{undef}@*)(*@\HLJLp{,}@*) (*@\HLJLn{n}@*)(*@\HLJLp{,}@*) (*@\HLJLn{m}@*)(*@\HLJLp{)}@*)
+    (*@\HLJLk{for}@*) (*@\HLJLn{i}@*) (*@\HLJLkp{in}@*) (*@\HLJLni{1}@*)(*@\HLJLoB{:}@*)(*@\HLJLn{n}@*)
+        (*@\HLJLn{j}@*)(*@\HLJLp{[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{,}@*) (*@\HLJLoB{:}@*)(*@\HLJLp{]}@*) (*@\HLJLoB{.=}@*) (*@\HLJLnf{gradient}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{f}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)[}@*)(*@\HLJLn{i}@*)(*@\HLJLp{],}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)[}@*)(*@\HLJLni{1}@*)(*@\HLJLp{]}@*)
+    (*@\HLJLk{end}@*)
+    (*@\HLJLk{return}@*) (*@\HLJLn{j}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+jacobian (generic function with 1 method)
+\end{lstlisting}
+
+
+[2pts] Briefly, explain why \texttt{gradient} of $f_3$ is not well defined (hint: what is the dimensionality of the output?) and what the \texttt{jacobian} function is doing in terms of calls to \texttt{gradient}. Specifically, how many calls of \texttt{gradient} is required to compute a whole \texttt{jacobian} for $f : \mathbb{R}^m \rightarrow \mathbb{R}^n$?
+
+Answer:
+
+The very important takeaway here is that, with AD, \texttt{gradient}s are cheap but full \texttt{jacobian}s are expensive.
+
+
+\begin{lstlisting}
+(*@\HLJLnf{f3}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{A}@*)
+(*@\HLJLn{df3dx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{jacobian}@*)(*@\HLJLp{(}@*)(*@\HLJLn{f3}@*)(*@\HLJLp{,}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLcs{{\#}using}@*) (*@\HLJLcs{jacobian}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+2(*@\ensuremath{\times}@*)3 Array{Int64,2}:
+  4408026600522538309  -6232865938377085614  1349691602347355064
+ -2873661868152111795   7436537824285171979  3974329157710246768
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[4. ] [1pts] Compute the gradient of $f_4(x) = x'Bx$ with respect to $x$?
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLnf{f4}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{)}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{B}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{x}@*)
+(*@\HLJLn{df4dx}@*) (*@\HLJLoB{=}@*) (*@\HLJLnf{gradient}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*) (*@\HLJLoB{->}@*) (*@\HLJLnf{f4}@*)(*@\HLJLp{(}@*)(*@\HLJLn{x}@*)(*@\HLJLp{),}@*) (*@\HLJLn{x}@*)(*@\HLJLp{)[}@*)(*@\HLJLni{1}@*)(*@\HLJLp{]}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+3-element Array{Int64,1}:
+ -6604381366815181109
+  -603149473546851437
+  -897390866673629496
+\end{lstlisting}
+
+
+\begin{itemize}
+\item[5. ] [2pts] Test all your implementations against the manually derived derivatives in previous question
+
+\end{itemize}
+
+\begin{lstlisting}
+(*@\HLJLcs{{\#}}@*) (*@\HLJLcs{Test}@*) (*@\HLJLcs{to}@*) (*@\HLJLcs{confirm}@*) (*@\HLJLcs{that}@*) (*@\HLJLcs{AD}@*) (*@\HLJLcs{matches}@*) (*@\HLJLcs{hand-derived}@*) (*@\HLJLcs{gradients}@*)
+(*@\HLJLnd{@testset}@*) (*@\HLJLs{"{}AD}@*) (*@\HLJLs{matches}@*) (*@\HLJLs{hand-derived}@*) (*@\HLJLs{gradients"{}}@*) (*@\HLJLk{begin}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLn{df1dx}@*) (*@\HLJLoB{==}@*) (*@\HLJLn{y}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLn{df2dx}@*) (*@\HLJLoB{==}@*) (*@\HLJLni{2}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{x}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLn{df3dx}@*) (*@\HLJLoB{==}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{A}@*)(*@\HLJLp{)}@*)
+  (*@\HLJLnd{@test}@*) (*@\HLJLn{df4dx}@*) (*@\HLJLoB{==}@*) (*@\HLJLp{(}@*)(*@\HLJLn{B}@*) (*@\HLJLoB{+}@*) (*@\HLJLnf{transpose}@*)(*@\HLJLp{(}@*)(*@\HLJLn{B}@*)(*@\HLJLp{))}@*) (*@\HLJLoB{*}@*) (*@\HLJLn{x}@*)
+(*@\HLJLk{end}@*)
+\end{lstlisting}
+
+\begin{lstlisting}
+Test Summary:                     | Pass  Total
+AD matches hand-derived gradients |    4      4
+Test.DefaultTestSet("AD matches hand-derived gradients", Any[], 4, false)
+\end{lstlisting}
+
+
+
+\end{document}
