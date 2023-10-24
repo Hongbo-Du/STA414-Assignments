@@ -1,0 +1,10 @@
+\BOOKMARK [1][-]{section.1}{Decision\040theory\040[13pts]}{}% 1
+\BOOKMARK [1][-]{section.2}{Regression}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Manually\040Derived\040Linear\040Regression\040[10pts]}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Toy\040Data\040[2pts]}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Linear\040Regression\040Model\040with\040\040MLE\040[4pts]}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Log-likelihood\040of\040Data\040Under\040Model\040[6pts]}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Automatic\040Differentiation\040and\040Maximizing\040Likelihood\040[3pts]}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Train\040Linear\040Regression\040Model\040with\040Gradient\040Descent\040[5pts]}{subsection.2.5}% 8
+\BOOKMARK [3][-]{subsubsection.2.5.2}{Non-linear\040Regression\040with\040a\040Neural\040Network\040[9pts]}{subsection.2.5}% 9
+\BOOKMARK [3][-]{subsubsection.2.5.3}{Non-linear\040Regression\040and\040Input-dependent\040Variance\040with\040a\040Neural\040Network\040[8pts]}{subsection.2.5}% 10
